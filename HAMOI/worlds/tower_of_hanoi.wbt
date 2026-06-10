@@ -1,0 +1,993 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/KukaBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/microsoft/protos/Kinect.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Fabric.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/road/protos/CurvedRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/buildings/protos/StripBuilding.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/buildings/protos/LargeResidentialTower.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/buildings/protos/Museum.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/buildings/protos/Church.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/street_furniture/protos/Bench.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/Forest.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticFruitBox.proto"
+
+WorldInfo {
+  info [
+    "Simulation showing the KUKA youBot model"
+  ]
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material2 "box"
+      coulombFriction [
+        10
+      ]
+    }
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.37579736158447097 0.13690278158455732 -0.9165336717331019 3.308910976262606
+  position 16.3879534479495 -4.520410917119319 17.734161516680114
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 3 3
+  appearance Parquetry {
+    type "dark strip"
+    colorOverride 0.0431373 1 0.47451
+  }
+}
+DEF SRC_PLATFORM SolidBox {
+  translation 0 1 0.005
+  rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 2.094395
+  name "platform"
+  size 0.1 0.01 0.2
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF DST_PLATFORM SolidBox {
+  translation -1.03518 -0.66696 -0.0349997
+  rotation 0.37796304747046094 0.6546520822213608 0.6546560822218632 2.41886
+  name "platform(2)"
+  size 0.9 0.08 0.6
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    roughness 0.5
+    metalness 0
+  }
+}
+PlasticFruitBox {
+  translation -1.01353 -0.69707 -0.12
+  rotation 0 0 -1 -2.094395307179586
+  color 0 0 0
+}
+DEF C1 KukaBox {
+  translation -0.8355335453987215 -0.552270429626879 0.029935214928572516
+  rotation -0.2081225236860079 0.6916219632587447 0.6916242296743851 -2.7312119704216418
+  name "Kuka box(1)"
+  color 1 1 1
+  size 0.05 0.05 0.05
+  contactMaterial "box"
+}
+DEF C2 KukaBox {
+  translation -0.8719379331421229 -0.5051547180143352 0.02993529701249237
+  rotation -0.21315820406408623 0.6908547152865522 0.6908569623348312 -2.721568524958406
+  name "Kuka box(2)"
+  color 0 0 0
+  size 0.05 0.05 0.05
+  contactMaterial "box"
+}
+DEF C3 KukaBox {
+  translation -0.9043189817179227 -0.45308526436232155 0.02993541316262296
+  rotation -0.1858027598175171 0.6947927983001517 0.6947951510153472 -2.7741828410610156
+  name "Kuka box(3)"
+  color 1 1 1
+  size 0.05 0.05 0.05
+  contactMaterial "box"
+}
+Youbot {
+  hidden position_0_0 139.8176156930135
+  hidden position_0_1 120.11178205367239
+  hidden position_0_2 229.6028078078418
+  hidden position_0_3 226.05640421377345
+  hidden position_6_0 9.793705932770357e-07
+  hidden translation_7 0 0 0.077
+  hidden rotation_7 0 0 1 9.794042542669264e-07
+  hidden position_7_0 1.5700026355456373
+  hidden translation_8 0.033 0 0.07
+  hidden rotation_8 0 -1 0 1.5700026355456373
+  hidden position_8_0 -2.6350014748388433
+  hidden translation_9 0 0 0.155
+  hidden rotation_9 0 0.9999999999999999 0 2.6350014748388433
+  hidden position_9_0 1.7800004233592563
+  hidden translation_10 0 0 0.135
+  hidden rotation_10 0 -1 0 1.7800004233592566
+  hidden position_10_0 -9.228595376392755e-08
+  hidden translation_11 0 0 0.081
+  hidden rotation_11 0 0 -1 9.424321830774485e-08
+  hidden position_11_0 0.025000000006304604
+  hidden position_11_1 0.024999999993699965
+  hidden translation_12 0 0.025000000006304604 0.09
+  hidden rotation_12 1 0 0 4.71239
+  hidden translation_13 0 -0.024999999993699965 0.09
+  hidden rotation_13 0 -0.7071067811865476 0.7071067811865476 3.14159
+  hidden translation_14 0.228 -0.158 -0.055
+  hidden rotation_14 0 1 0 1.5875389350625912
+  hidden translation_15 0.228 0.158 -0.055
+  hidden rotation_15 0 -1 0 5.5519240899193445
+  hidden translation_16 -0.228 -0.158 -0.055
+  hidden rotation_16 0 1 0 3.408136749376686
+  hidden translation_17 -0.228 0.158 -0.055
+  hidden rotation_17 0 -1 0 0.1382668446916652
+  translation -0.0004448189260290392 -0.0008256722839241316 0.10343531718754737
+  rotation -0.00042783452595905727 0.00040741426854346143 0.9999998254856008 1.5707969763384801
+  controller "hanoi"
+  bodySlot [
+    Kinect {
+      translation 0.27 0 -0.02
+      rotation 0.5773502691896258 -0.5773502691896258 -0.5773502691896258 2.0944
+      foot FALSE
+    }
+    GPS {
+    }
+    Compass {
+    }
+  ]
+}
+RectangleArena {
+  rotation 0 0 1 -0.523595307179586
+  floorSize 153 174
+  floorAppearance Parquetry {
+    type "dark strip"
+    colorOverride 0.0431373 1 0.47451
+  }
+  wallAppearance BrushedAluminium {
+    colorOverride 0.223529 1 0.137255
+  }
+}
+Bench {
+  translation 8.52 0.300003 0.01
+  rotation 0 0 1 -1.5707953071795862
+}
+Bench {
+  translation -23.15 0.299993 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bench(6)"
+}
+Bench {
+  translation -13.9863 9.46406 0
+  rotation 0 0 1 -2.3561953071795863
+  name "bench(29)"
+}
+Bench {
+  translation 11.6682 -16.1901 0
+  rotation 0 0 1 -2.3561953071795863
+  name "bench(33)"
+}
+Bench {
+  translation 22.5997 -27.1216 0
+  rotation 0 0 1 -2.3561953071795863
+  name "bench(34)"
+}
+Bench {
+  translation -29.6208 25.0986 0
+  rotation 0 0 1 -2.3561953071795863
+  name "bench(30)"
+}
+Bench {
+  translation -25.1986 14.3164 0
+  rotation 0 0 1 0.785397
+  name "bench(31)"
+}
+Bench {
+  translation 3.12821 -14.0105 0
+  rotation 0 0 1 0.785397
+  name "bench(35)"
+}
+Bench {
+  translation 14.2511 -25.1336 0
+  rotation 0 0 1 0.785397
+  name "bench(36)"
+}
+Bench {
+  translation 28.4992 -39.3817 0
+  rotation 0 0 1 0.785397
+  name "bench(37)"
+}
+Bench {
+  translation -38.9946 28.1124 0
+  rotation 0 0 1 0.785397
+  name "bench(32)"
+}
+Bench {
+  translation -35.58 0.299993 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bench(7)"
+}
+Bench {
+  translation 22.98 0.300003 0.01
+  rotation 0 0 -0.9999999999999999 1.5707953071795862
+  name "bench(1)"
+}
+Bench {
+  translation 11.0881 20.2918 0.01
+  rotation 0 0 -1 0.785401
+  name "bench(8)"
+}
+Bench {
+  translation 2.05841 11.2608 0.01
+  rotation 0 0 -1 0.785401
+  name "bench(9)"
+}
+Bench {
+  translation -19.8477 -10.6452 0.01
+  rotation 0 0 -1 0.785401
+  name "bench(23)"
+}
+Bench {
+  translation -30.6876 -21.4851 0.01
+  rotation 0 0 -1 0.785401
+  name "bench(25)"
+}
+Bench {
+  translation -22.108 -19.0899 0.01
+  rotation 0 0 1 2.35619
+  name "bench(27)"
+}
+Bench {
+  translation -32.5465 -29.584 0.01
+  rotation 0 0 1 2.35619
+  name "bench(28)"
+}
+Bench {
+  translation -40.3466 -31.1439 0.01
+  rotation 0 0 -1 0.7854009999999998
+  name "bench(26)"
+}
+Bench {
+  translation 22.0905 31.293 0.01
+  rotation 0 0 -1 0.785401
+  name "bench(10)"
+}
+Bench {
+  translation 30.3836 32.7973 0.01
+  rotation 0 0 1 2.35619
+  name "bench(11)"
+}
+Bench {
+  translation 19.4229 21.8372 0.01
+  rotation 0 0 1 2.35619
+  name "bench(12)"
+}
+Bench {
+  translation 10.2374 12.652 0.01
+  rotation 0 0 1 2.35619
+  name "bench(13)"
+}
+Bench {
+  translation 15.46 -4.1 0.01
+  rotation 0 0 1 1.5708
+  name "bench(2)"
+}
+Bench {
+  translation -19.18 -4.1 0.01
+  rotation 0 0 1 1.5708
+  name "bench(4)"
+}
+Bench {
+  translation -3.22 -15.84 0.01
+  rotation 0 0 1 -3.1415853071795863
+  name "bench(14)"
+}
+Bench {
+  translation -3.22 13.12 0.01
+  rotation 0 0 1 -3.1415853071795863
+  name "bench(19)"
+}
+Bench {
+  translation -3.22 32.06 0.01
+  rotation 0 0 1 -3.1415853071795863
+  name "bench(20)"
+}
+Bench {
+  translation -3.22 -28.21 0.01
+  rotation 0 0 1 -3.1415853071795863
+  name "bench(15)"
+}
+Bench {
+  translation -3.22 -41.76 0.01
+  rotation 0 0 1 -3.1415853071795863
+  name "bench(16)"
+}
+Bench {
+  translation -7.77 -34.45 0.01
+  rotation 0 0 1 7.33682e-06
+  name "bench(17)"
+}
+Bench {
+  translation -7.77 -49.15 0.01
+  rotation 0 0 1 7.33682e-06
+  name "bench(24)"
+}
+Bench {
+  translation -7.77 -22.71 0.01
+  rotation 0 0 1 7.33682e-06
+  name "bench(18)"
+}
+Bench {
+  translation -7.77019 22.25 0.01
+  rotation 0 0 1 7.33682e-06
+  name "bench(21)"
+}
+Bench {
+  translation -7.77019 43.4 0.01
+  rotation 0 0 1 7.33682e-06
+  name "bench(22)"
+}
+Bench {
+  translation -30.68 -4.1 0.01
+  rotation 0 0 1 1.5708
+  name "bench(5)"
+}
+Bench {
+  translation 29.87 -4.1 0.01
+  rotation 0 0 1 1.5708
+  name "bench(3)"
+}
+StripBuilding {
+  translation 49.1 -49.19 0
+  rotation 0 0 1 -3.1415853071795863
+  name "strip building(1)"
+  length 40
+  randomSeed 7
+}
+StripBuilding {
+  translation -1.05 -62.1 0
+  rotation 0 0 1 1.5708
+  name "strip building(5)"
+  length 40
+  randomSeed 10
+}
+StripBuilding {
+  translation -51.85 -66 1.03821e-13
+  rotation 9.58976e-09 9.58979e-09 -1 -1.5707953071795862
+  name "strip building(6)"
+  length 40
+  randomSeed 6
+}
+StripBuilding {
+  translation -49.36 -9.5 0
+  rotation 0 0 1 7.33682e-06
+  name "strip building(3)"
+  length 40
+  randomSeed 7
+}
+LargeResidentialTower {
+  translation -56.2335 77.8784 0
+  rotation 0 0 1 -1.047195307179586
+}
+Church {
+  translation 4.44 64.71 1.05
+  rotation 0 0 1 -1.5707953071795862
+}
+StripBuilding {
+  translation -51.25 44.28 0
+  rotation 0 0 1 7.33682e-06
+  name "strip building(4)"
+  length 40
+  randomSeed 7
+}
+Forest {
+  translation -18.8713 -40.0284 -0.19
+  rotation 1.91796e-08 2.52504e-09 1 2.8798
+  shape [
+    -15 -6
+    -15 -6
+    22 -8
+    0 27
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation 13.3697 29.0563 -1.1
+  rotation 1.91797e-08 -5.13914e-09 1 -2.617985307179586
+  shape [
+    -13 -7
+    -8 -3
+    -8 -3
+    22 -8
+    0 27
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation -22.9938 40.6644 -0.42
+  rotation 7.19567e-09 -1.31398e-08 1 -1.8325653071795864
+  shape [
+    6 -6
+    -3 0
+    -7 -12
+    27 -12
+    27 -12
+    1 18
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation -39.6627 18.2093 -0.42
+  rotation 2.56977e-09 -2.36316e-08 1 -1.0471653071795863
+  shape [
+    7 16
+    12 8
+    -5 -6
+    27 -12
+    27 -12
+    1 18
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation 30.0851 9.51083 -0.42
+  rotation 1.15062e-08 -3.3633e-09 1 2.87982
+  shape [
+    7 16
+    12 8
+    -5 -6
+    27 -12
+    27 -12
+    1 18
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation 21.1693 -8.93104 -0.42
+  rotation -8.10661e-09 1.10738e-08 -1 2.09436
+  shape [
+    7 16
+    -2 2
+    -11 -11
+    10 -14
+    14 -12
+    1 18
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation -24.0349 -13.2828 -0.42
+  rotation -1.4554e-08 -3.54953e-09 -1 -1.832645307179586
+  shape [
+    5 11
+    -7 -13
+    -11 -11
+    10 -14
+    14 -12
+    1 18
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+Forest {
+  translation 11.2278 -34.4275 -0.42
+  rotation 9.59016e-09 -7.709e-09 1 -2.617955307179586
+  shape [
+    7 16
+    -2 2
+    -11 -11
+    10 -14
+    14 -12
+    1 18
+  ]
+  maxHeight 7
+  minHeight 3
+  maxRadius 2
+}
+StripBuilding {
+  translation 49.1 2.7 0
+  rotation 0 0 1 -3.1415853071795863
+  name "strip building(2)"
+  length 40
+  randomSeed 7
+}
+Solid {
+  translation -5.37 -53.68 0.01
+  rotation 0 0 1 1.5708
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 40
+    }
+  ]
+  name "solid(9)"
+}
+Solid {
+  translation -5.37016 9.21 0.01
+  rotation 0 0 1 1.5708
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 41
+    }
+  ]
+  name "solid(10)"
+}
+Solid {
+  translation -13.4583 5.90367 0.01
+  rotation 0 0 -1 -2.3562053071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 53
+    }
+  ]
+  name "solid(11)"
+}
+Solid {
+  translation -13.4583 50.0837 0.04
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(17)"
+}
+Solid {
+  translation 33.9917 50.0837 0.04
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 52
+    }
+  ]
+  name "solid(18)"
+}
+Solid {
+  translation 36.4717 7.6737 0.19
+  rotation 0 0 1 1.5708
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(19)"
+}
+Solid {
+  translation 36.4617 -36.5763 0.1
+  rotation 0 0 1 1.5708
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(20)"
+}
+Solid {
+  translation 36.4817 -53.5963 0.1
+  rotation 0 0 1 1.5708
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(21)"
+}
+Solid {
+  translation 31.4917 -53.5963 0.07
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(22)"
+}
+Solid {
+  translation 38.3617 -53.5963 0.04
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(27)"
+}
+Solid {
+  translation -12.7883 -53.5963 0.02
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 45
+    }
+  ]
+  name "solid(23)"
+}
+Solid {
+  translation -43.6883 -0.5363 0.03
+  rotation 0 0 -1 1.57079
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 56
+    }
+  ]
+  name "solid(24)"
+}
+Solid {
+  translation -43.6883 47.8337 0.05
+  rotation 0 0 -1 1.57079
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 48
+    }
+  ]
+  name "solid(26)"
+}
+Solid {
+  translation 35.497 -43.0504 0.01
+  rotation 0 0 -1 -2.3562053071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 48
+    }
+  ]
+  name "solid(12)"
+}
+Solid {
+  translation 58.2332 -1.9169 0.01
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 52
+    }
+    StraightRoadSegment {
+      name "road(1)"
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 29
+    }
+  ]
+  name "solid(13)"
+}
+Solid {
+  translation -17.0568 -1.91727 0.01
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 29
+    }
+    StraightRoadSegment {
+      name "road(1)"
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 29
+    }
+  ]
+  name "solid(14)"
+}
+Solid {
+  translation -14.7008 -8.51187 0.01
+  rotation 0 0 -0.9999999999999999 2.35619
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 42
+    }
+    StraightRoadSegment {
+      name "road(1)"
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 29
+    }
+  ]
+  name "solid(15)"
+}
+Solid {
+  translation 37.8655 43.7715 0.01
+  rotation 0 0 -0.9999999999999999 2.35619
+  children [
+    StraightRoadSegment {
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 53
+    }
+    StraightRoadSegment {
+      name "road(1)"
+      width 5
+      roadBorderHeight 0.22
+      rightBorder FALSE
+      leftBorder FALSE
+      length 29
+    }
+  ]
+  name "solid(16)"
+}
+Solid {
+  name "solid(8)"
+}
+Solid {
+  translation -5.40224 -2.07121 0.01
+  rotation 0 0 -1 -1.5708053071795867
+  children [
+    CurvedRoadSegment {
+      width 0.02
+      numberOfLanes -1
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+    CurvedRoadSegment {
+      name "road(1)"
+      width 4
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+  ]
+  name "solid(4)"
+}
+Solid {
+  translation -5.40224 -2.07121 0.01
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    CurvedRoadSegment {
+      width 0.02
+      numberOfLanes -1
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+    CurvedRoadSegment {
+      name "road(1)"
+      width 4
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+  ]
+  name "solid(7)"
+}
+Solid {
+  translation -5.40224 -2.07121 0.01
+  rotation 0 0 1 -1.3089853071795865
+  children [
+    CurvedRoadSegment {
+      width 0.02
+      numberOfLanes -1
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+    CurvedRoadSegment {
+      name "road(1)"
+      width 4
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+  ]
+  name "solid(1)"
+}
+Solid {
+  translation -6.26 -1.60002 0.55
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance Fabric {
+      }
+      geometry Mesh {
+        url [
+          "../../../surveyor/worlds/plaza.obj"
+        ]
+      }
+    }
+  ]
+  name "solid(25)"
+}
+Solid {
+  translation -5.40224 -2.07121 0.01
+  rotation 0 0 1 -2.356185307179586
+  children [
+    CurvedRoadSegment {
+      width 0.02
+      numberOfLanes -1
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+    CurvedRoadSegment {
+      name "road(1)"
+      width 4
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation -5.40224 -2.07121 0.01
+  rotation 0 0 1 -2.8797853071795863
+  children [
+    CurvedRoadSegment {
+      width 0.02
+      numberOfLanes -1
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+    CurvedRoadSegment {
+      name "road(1)"
+      width 4
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+  ]
+  name "solid(5)"
+}
+Solid {
+  translation -5.40224 -2.07121 0.01
+  rotation 0 0 1 0.261807
+  children [
+    CurvedRoadSegment {
+      width 0.02
+      numberOfLanes -1
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+    CurvedRoadSegment {
+      name "road(1)"
+      width 4
+      rightBorder FALSE
+      leftBorder FALSE
+    }
+  ]
+  name "solid(6)"
+}
+Solid {
+  translation -5.89 -2.68136e-06 0.73
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance Fabric {
+      }
+      geometry Mesh {
+        url [
+          "../plaza.obj"
+        ]
+      }
+    }
+  ]
+  name "solid(2)"
+}
+Solid {
+  translation -5.76 -2.02 0.74
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance Fabric {
+      }
+      geometry Mesh {
+        url [
+          "../../surveyor/worlds/plaza.obj"
+        ]
+      }
+    }
+  ]
+}
+Museum {
+  translation -23.88 61.57 2.84
+  rotation 0 0 1 -1.5707953071795862
+}
